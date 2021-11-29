@@ -26,7 +26,7 @@ func Init()  *fiber.App {
 	r.Delete("/boooks",controllers.DeleteBook)
 
 	/*route login */
-	r.Get("/login", controllers.LoginUser)
+	r.Post("/login", controllers.LoginUser)
 
 
 	return r

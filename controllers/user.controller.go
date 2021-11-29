@@ -119,6 +119,13 @@ func LoginUser(c *fiber.Ctx)error  {
 
 	res, obj, err := models.LoginUser(username, password)
 	if err != nil {
+
+		//error default fiber -> tidak dikembalikan status 200
+		//code := fiber.StatusUnauthorized
+		//c.Set(fiber.HeaderContentType, fiber.MIMETextPlainCharsetUTF8)
+		//c.Status(code).SendString(err.Error())
+		//
+
 		return c.JSON(map[string]string{
 			"messages": err.Error(),
 		})
